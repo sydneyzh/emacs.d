@@ -18,6 +18,11 @@
   :config
   (add-to-list 'auto-mode-alist '("\\.html?\\'" . jinja2-mode)))
 
+;;; neotree
+(use-package neotree
+  :config
+  (global-set-key [f8] 'neotree-toggle))
+
 (provide 'init-local)
 ;;; init-local.el ends here
 
