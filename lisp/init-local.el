@@ -12,6 +12,12 @@
 (require 'evil)
 (evil-mode 1)
 
+;;; jinja2-mode
+(use-package jinja2-mode
+  :ensure t
+  :config
+  (add-to-list 'auto-mode-alist '("\\.html?\\'" . jinja2-mode)))
+
 (provide 'init-local)
 ;;; init-local.el ends here
 
