@@ -16,7 +16,9 @@
 (use-package jinja2-mode
   :ensure t
   :config
-  (add-to-list 'auto-mode-alist '("\\.html?\\'" . jinja2-mode)))
+  (add-to-list 'auto-mode-alist '("\\.html?\\'" . jinja2-mode))
+  (superword-mode)
+  )
 
 ;;; neotree
 (use-package neotree
