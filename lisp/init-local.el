@@ -31,6 +31,8 @@
   (push '("*xref*" :dedicated t :position bottom :stick t :noselect t :height 0.2) popwin:special-display-config)
 (popwin-mode 1)
 
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
 (provide 'init-local)
 ;;; init-local.el ends here
 
