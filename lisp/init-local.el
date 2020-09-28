@@ -25,6 +25,12 @@
   :config
   (global-set-key [f8] 'neotree-toggle))
 
+;;; winum
+(use-package winum
+  :config
+  (winum-set-keymap-prefix (kbd "C-c")))
+(winum-mode)
+
 (provide 'init-local)
 ;;; init-local.el ends here
 
