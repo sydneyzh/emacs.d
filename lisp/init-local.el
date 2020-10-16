@@ -52,5 +52,13 @@
   (winum-set-keymap-prefix (kbd "C-c")))
 (winum-mode)
 
+;;; python
+(use-package pyenv-mode
+  :hook python-mode)
+(use-package pyenv-mode-auto
+             :after pyenv-mode)
+(when (maybe-require-package 'flycheck)
+  (setq flycheck-python-pycompile-executable "python")) ;; override default "python3"
+
 (provide 'init-local)
 ;;; init-local.el ends here
