@@ -5,6 +5,8 @@
 ;;; use-package
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
+(require 'use-package-ensure)
+(setq use-package-always-ensure t)
 
 ;;; evil
 (unless (package-installed-p 'evil)
@@ -14,9 +16,8 @@
 
 ;;; popwin
 (use-package popwin
-  :ensure t
   :diminish popwin-mode
-  :config 
+  :config
   ;; config "popwin:special-display-config"
   (push '("*Anaconda*" :dedicated t :position right :stick t :noselect t :width 0.3) popwin:special-display-config)
   (push '("*Autocomplete Error*" :dedicated t :position bottom :stick t :noselect t :height 0.2) popwin:special-display-config))
@@ -35,7 +36,6 @@
 
 ;;; jinja2-mode
 (use-package jinja2-mode
-  :ensure t
   :config
   (add-to-list 'auto-mode-alist '("\\.html?\\'" . jinja2-mode))
   (superword-mode)
@@ -54,4 +54,3 @@
 
 (provide 'init-local)
 ;;; init-local.el ends here
-
