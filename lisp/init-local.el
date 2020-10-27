@@ -70,6 +70,13 @@
   (winum-set-keymap-prefix (kbd "C-c")))
 (winum-mode)
 
+;;; yasnippet
+(use-package yasnippet
+  :config
+  (when (boundp '*snippet-dir*)
+    (setq yas-snippet-dirs '(*snippet-dir*))))
+(yas-global-mode 1)
+
 ;;; python
 (use-package pyenv-mode
   :hook python-mode)
