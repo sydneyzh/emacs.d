@@ -32,6 +32,13 @@
                               (xref--xref-buffer-mode . emacs))
       do (evil-set-initial-state mode state))
 
+;; undo-tree
+(use-package undo-tree
+  :diminish undo-tree-mode)
+(global-undo-tree-mode)
+(define-key evil-normal-state-map (kbd "C-r") 'undo-tree-redo)
+(define-key evil-normal-state-map (kbd "u") 'undo-tree-undo)
+
 ;;; popwin
 (use-package popwin
   :diminish popwin-mode
