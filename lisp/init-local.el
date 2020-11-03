@@ -92,5 +92,9 @@
 (when (maybe-require-package 'flycheck)
   (setq flycheck-python-pycompile-executable "python")) ;; override default "python3"
 
+;;; org mode
+(with-eval-after-load 'org
+  (setq org-confirm-babel-evaluate nil))
+
 (provide 'init-local)
 ;;; init-local.el ends here
