@@ -92,6 +92,19 @@
 (when (maybe-require-package 'flycheck)
   (setq flycheck-python-pycompile-executable "python")) ;; override default "python3"
 
+;;; tide
+(use-package tide
+  :after (typescript-mode company flycheck)
+  :config
+  (defun setup-tide-mode ()
+    (interactive)
+    (tide-setup)
+    (eldoc-mode +1)
+    (tide-hl-identifier-mode +1)
+    )
+  (add-hook 'before-save-hook 'tide-format-before-save)
+  (add-hook 'typescript-mode-hook #'setup-tide-mode))
+
 ;;; org mode
 (with-eval-after-load 'org
   (setq org-confirm-babel-evaluate nil))
