@@ -109,5 +109,9 @@
 (with-eval-after-load 'org
   (setq org-confirm-babel-evaluate nil))
 
+;;; reset comment-line key
+(global-unset-key (kbd "C-x ;"))
+(global-set-key (kbd "C-x ;") 'comment-line)
+
 (provide 'init-local)
 ;;; init-local.el ends here
