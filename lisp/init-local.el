@@ -113,5 +113,9 @@
 (global-unset-key (kbd "C-x ;"))
 (global-set-key (kbd "C-x ;") 'comment-line)
 
+;;; lisp
+(when (boundp '*inferior-lisp-program*)
+  (setq inferior-lisp-program *inferior-lisp-program*))
+
 (provide 'init-local)
 ;;; init-local.el ends here
