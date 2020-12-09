@@ -117,5 +117,10 @@
 (when (boundp '*inferior-lisp-program*)
   (setq inferior-lisp-program *inferior-lisp-program*))
 
+;;; use ibuffer-projectile to filter ibuffer
+(when (maybe-require-package 'ibuffer-projectile)
+  (add-hook 'ibuffer-hook
+            (ibuffer-projectile-set-filter-groups)))
+
 (provide 'init-local)
 ;;; init-local.el ends here
