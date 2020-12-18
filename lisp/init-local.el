@@ -25,6 +25,7 @@
                               (helm-grep-mode . emacs)
                               (grep-mode . emacs)
                               (bc-menu-mode . emacs)
+                              (magit-mode . emacs)
                               (magit-branch-manager-mode . emacs)
                               (rdictcc-buffer-mode . emacs)
                               (dired-mode . emacs)
