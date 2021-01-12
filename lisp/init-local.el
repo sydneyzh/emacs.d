@@ -13,7 +13,7 @@
   (package-install 'evil))
 (require 'evil)
 (evil-mode 1)
-(loop for (mode . state) in '((inferior-emacs-lisp-mode . emacs)
+(cl-loop for (mode . state) in '((inferior-emacs-lisp-mode . emacs)
                               (nrepl-mode . insert)
                               (pylookup-mode . emacs)
                               (comint-mode . normal)
