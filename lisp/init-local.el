@@ -77,6 +77,10 @@
   (winum-set-keymap-prefix (kbd "C-c")))
 (winum-mode)
 
+;;; customize switch-window-shortcut-style
+(when (maybe-require-package 'switch-window)
+  (setq switch-window-shortcut-style 'quaill))
+
 ;;; yasnippet
 (use-package yasnippet
   :config
