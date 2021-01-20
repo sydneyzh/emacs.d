@@ -161,6 +161,8 @@
 (add-hook 'after-init-hook
           (lambda ()
             (require 'server)
+	    (and (>= emacs-major-version 23)
+		 (defun server-ensure-safe-dir (dir) "Noop" t))
             (unless (server-running-p)
               (server-start))))
 
