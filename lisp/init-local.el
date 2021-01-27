@@ -127,5 +127,9 @@
   (add-hook 'ibuffer-hook
             (ibuffer-projectile-set-filter-groups)))
 
+;;; customize selectrum
+(when (maybe-require-package 'selectrum)
+  (setq selectrum-count-style nil))
+
 (provide 'init-local)
 ;;; init-local.el ends here
