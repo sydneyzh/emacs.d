@@ -99,7 +99,7 @@
 
 ;;; tide
 (use-package tide
-  :after (typescript-mode company flycheck)
+  :after (typescript-mode company)
   :config
   (defun setup-tide-mode ()
     (interactive)
@@ -108,7 +108,21 @@
     (tide-hl-identifier-mode +1)
     )
   (add-hook 'before-save-hook 'tide-format-before-save)
-  (add-hook 'typescript-mode-hook #'setup-tide-mode))
+  (add-hook 'typescript-mode-hook #'setup-tide-mode)
+  )
+
+;; open tsx in web mode
+(use-package web-mode
+  :ensure t
+  :after (tide flycheck)
+  :config
+  (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
+  (add-hook 'web-mode-hook
+            (lambda ()
+              (when (string-equal "tsx" (file-name-extension buffer-file-name))
+                (setup-tide-mode))))
+  ;; enable typescript-tslint checker
+  (flycheck-add-mode 'typescript-tslint 'web-mode))
 
 ;;; org mode
 (with-eval-after-load 'org
