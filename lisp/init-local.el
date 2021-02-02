@@ -162,5 +162,10 @@
 (when (maybe-require-package 'selectrum)
   (setq selectrum-count-style nil))
 
+;;; customize company
+(when (maybe-require-package 'company)
+  ;; make plain text case sensitive
+  (setq company-dabbrev-downcase nil))
+
 (provide 'init-local)
 ;;; init-local.el ends here
