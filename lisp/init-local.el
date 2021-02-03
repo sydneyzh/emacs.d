@@ -129,7 +129,6 @@
 ;;; tide
 (use-package tide
   :ensure t
-  :after typescript-mode
   :init
   (defun setup-tide-mode ()
     (interactive)
@@ -139,7 +138,9 @@
     )
   (add-hook 'before-save-hook 'tide-format-before-save)
   (add-hook 'typescript-mode-hook #'setup-tide-mode)
+  (add-hook 'js2-mode-hook #'setup-tide-mode)
   )
+
 
 ;;; org mode
 (with-eval-after-load 'org
