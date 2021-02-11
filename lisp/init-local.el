@@ -168,5 +168,12 @@
   ;; make plain text case sensitive
   (setq company-dabbrev-downcase nil))
 
+;;; workgroups2 mode
+;;; preserve window layout when using emacs daemon
+(use-package workgroups2
+  :ensure t
+  :init
+  (workgroups-mode t))
+
 (provide 'init-local)
 ;;; init-local.el ends here
