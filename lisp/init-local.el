@@ -175,5 +175,31 @@
   :init
   (workgroups-mode t))
 
+;;; doom modeline
+(use-package doom-modeline
+  :ensure t
+  :config
+  (doom-modeline-mode)
+  :custom
+  (doom-modeline-buffer-file-name-style 'relative-to-project)
+  (doom-modeline-minor-modes nil)
+  (doom-modeline-enable-word-count nil)
+  (doom-modeline-buffer-encoding t)
+  (doom-modeline-indent-info t)
+  (doom-modeline-checker-simple-format t)
+  (doom-modeline-vcs-max-length 12)
+  (doom-modeline-env-version t)
+  (doom-modeline-irc-stylize 'identity)
+  (doom-modeline-mu4e t)
+  (doom-modeline-workspace-name t)
+  (doom-modeline-env-python-executable t)
+  (doom-modeline-env-enable-python t))
+
+;;; nyan mode
+(use-package nyan-mode
+  :ensure t
+  :config
+  (nyan-mode 1))
+
 (provide 'init-local)
 ;;; init-local.el ends here
