@@ -104,12 +104,6 @@
   (yas-global-mode 1))
 
 ;;; python
-(use-package pyenv-mode
-  :ensure t
-  :hook python-mode)
-(use-package pyenv-mode-auto
-  :ensure t
-  :after pyenv-mode)
 (when (maybe-require-package 'flycheck)
   (setq flycheck-python-pycompile-executable "python")) ;; override default "python3"
 
