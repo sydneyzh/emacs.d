@@ -193,7 +193,15 @@
 (use-package nyan-mode
   :ensure t
   :config
-  (nyan-mode 1))
+  (when (display-graphic-p)
+    (nyan-mode 1)))
+
+;;; fix terminal unicode
+(prefer-coding-system       'utf-8)
+(set-default-coding-systems 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
 
 (provide 'init-local)
 ;;; init-local.el ends here
